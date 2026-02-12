@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     actualizarLista() {
-      // Llamar al método cargarVehiculos del componente hijo usando ref
       this.$refs.listaVehiculos.cargarVehiculos();
     },
   },

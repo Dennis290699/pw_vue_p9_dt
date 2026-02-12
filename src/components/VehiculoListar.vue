@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { listarVehiculosFachada, eliminarVehiculoFachada } from "../components/VehiculoClient";
+import { listarVehiculosFachada, eliminarVehiculoFachada } from "../client/VehiculoClient";
 
 export default {
   data() {

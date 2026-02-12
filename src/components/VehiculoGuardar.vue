@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { guardarVehiculoFachada } from "../components/VehiculoClient";
+import { guardarVehiculoFachada } from "../client/VehiculoClient";
 import { AuthorizationToken } from "../components/AuthorizationToken";
 
 export default {
@@ -64,8 +64,25 @@ export default {
   },
   methods: {
     async guardar() {
+      if (!this.vehiculo.marca) {
+        this.mensaje = "Error: El campo Marca es obligatorio.";
+        return;
+      }
+      if (!this.vehiculo.modelo) {
+        this.mensaje = "Error: El campo Modelo es obligatorio.";
+        return;
+      }
       if (!this.vehiculo.chasis) {
         this.mensaje = "Error: El campo Chasis es obligatorio.";
+        return;
+      }
+      // con las fechas
+      if (!this.vehiculo.fechaFabricacion) {
+        this.mensaje = "Error: El campo Fecha de fabricación es obligatorio.";
+        return;
+      }
+      if (!this.vehiculo.fechaMatricula) {
+        this.mensaje = "Error: El campo Fecha de matrícula es obligatorio.";
         return;
       }
       this.mensaje = "Guardando...";

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { AuthorizationToken } from "./AuthorizationToken";
+import { AuthorizationToken } from "../components/AuthorizationToken";
 
 // Configuración base
 const apiClient = axios.create({
